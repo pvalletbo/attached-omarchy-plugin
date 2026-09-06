@@ -11,7 +11,7 @@ const integration = plugin;
 test("manifest declares a loadable third-party overlay", () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(plugin, "manifest.json"), "utf8"));
   assert.equal(manifest.schemaVersion, 1);
-  assert.equal(manifest.id, "pvalletbo.attached");
+  assert.equal(manifest.id, "io.github.pvalletbo.attached");
   assert.deepEqual(manifest.kinds, ["overlay"]);
   assert.equal(manifest.entryPoints.overlay, "Overlay.qml");
   assert.ok(fs.statSync(path.join(plugin, manifest.entryPoints.overlay)).isFile());

@@ -8,7 +8,7 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
 const repository = path.resolve(__dirname, "..");
-const pluginId = "pvalletbo.attached";
+const pluginId = "io.github.pvalletbo.attached";
 const pluginFiles = [
   "config.json",
   "install.sh",

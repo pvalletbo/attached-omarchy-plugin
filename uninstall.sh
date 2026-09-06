@@ -15,7 +15,7 @@ binding_block() {
   printf '%s\n' 'o.bind('
   printf '%s\n' '  "SUPER + CTRL + SHIFT + H",'
   printf '%s\n' '  "Attached sessions",'
-  printf '%s\n' '  "omarchy-shell shell toggle pvalletbo.attached"'
+  printf '%s\n' '  "omarchy-shell shell toggle io.github.pvalletbo.attached"'
   printf '%s\n' ')'
   printf '%s\n' "$end_marker"
 }
@@ -84,7 +84,7 @@ if [[ $begin_count -eq 1 ]]; then
   cat "$backup_root/bindings.new" > "$bindings"
 fi
 
-if ! omarchy plugin remove pvalletbo.attached "$@"; then
+if ! omarchy plugin remove io.github.pvalletbo.attached "$@"; then
   if [[ $begin_count -eq 1 ]]; then
     cp -p "$backup_root/bindings.lua" "$bindings"
   fi

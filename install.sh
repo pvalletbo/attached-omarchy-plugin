@@ -7,7 +7,7 @@ set -euo pipefail
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
 omarchy_config_home="$HOME/.config"
 attached_config_home=${XDG_CONFIG_HOME:-"$HOME/.config"}
-destination="$omarchy_config_home/omarchy/plugins/pvalletbo.attached"
+destination="$omarchy_config_home/omarchy/plugins/io.github.pvalletbo.attached"
 bindings="$omarchy_config_home/hypr/bindings.lua"
 attached_config_dir="$attached_config_home/attached"
 plugin_config="$attached_config_dir/omarchy.json"
@@ -22,7 +22,7 @@ binding_block() {
   printf '%s\n' 'o.bind('
   printf '%s\n' '  "SUPER + CTRL + SHIFT + H",'
   printf '%s\n' '  "Attached sessions",'
-  printf '%s\n' '  "omarchy-shell shell toggle pvalletbo.attached"'
+  printf '%s\n' '  "omarchy-shell shell toggle io.github.pvalletbo.attached"'
   printf '%s\n' ')'
   printf '%s\n' "$end_marker"
 }
@@ -198,7 +198,7 @@ if [[ ! -e "$plugin_config" ]]; then
 fi
 
 omarchy-shell shell rescanPlugins
-omarchy plugin enable pvalletbo.attached
+omarchy plugin enable io.github.pvalletbo.attached
 transaction_committed=true
 printf 'Installed Attached picker. Press Super+Ctrl+Shift+H to open it.\n'
 printf 'Encryption password provider configuration: %s (default: password).\n' "$plugin_config"

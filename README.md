@@ -18,7 +18,7 @@ Review the repository before enabling it: Omarchy plugins execute unsandboxed in
 
 ```bash
 omarchy plugin add https://github.com/pvalletbo/attached-omarchy-plugin.git
-~/.config/omarchy/plugins/pvalletbo.attached/install.sh
+~/.config/omarchy/plugins/io.github.pvalletbo.attached/install.sh
 ```
 
 Omarchy intentionally runs no plugin install hook. The second command:
@@ -27,7 +27,7 @@ Omarchy intentionally runs no plugin install hook. The second command:
 - installs a missing Attached CLI with its documented HTTPS-only installer command;
 - adds one managed **Super+Ctrl+Shift+H** shortcut to `~/.config/hypr/bindings.lua`;
 - creates `${XDG_CONFIG_HOME:-$HOME/.config}/attached/omarchy.json` only when absent;
-- rescans Omarchy Shell and enables `pvalletbo.attached`.
+- rescans Omarchy Shell and enables `io.github.pvalletbo.attached`.
 
 The script performs all refusal checks before downloading or writing anything. It never overwrites the user-owned provider configuration or a modified shortcut block. Re-running it is idempotent. If shell setup fails, it restores the previous bindings and newly created provider configuration while retaining the Git checkout and any successfully installed Attached CLI so setup can be retried.
 
@@ -42,7 +42,7 @@ This downloads and executes Attached's installer. Review [install.attached.sh](h
 Update the Git-managed plugin with:
 
 ```bash
-omarchy plugin update pvalletbo.attached
+omarchy plugin update io.github.pvalletbo.attached
 ```
 
 ## Configuration
@@ -64,7 +64,7 @@ Press **Super+Ctrl+Shift+H** to toggle the picker. With the default provider, en
 Run the bundled removal helper before its Git checkout is deleted:
 
 ```bash
-~/.config/omarchy/plugins/pvalletbo.attached/uninstall.sh
+~/.config/omarchy/plugins/io.github.pvalletbo.attached/uninstall.sh
 ```
 
 Pass `--yes` for noninteractive removal. The helper safely removes its exact managed shortcut and delegates plugin removal to Omarchy. It retains the Attached CLI and `${XDG_CONFIG_HOME:-$HOME/.config}/attached/omarchy.json`; remove those separately only if they are no longer needed.
